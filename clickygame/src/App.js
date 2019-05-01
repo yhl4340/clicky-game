@@ -16,41 +16,40 @@ class App extends Component {
     msg: ""
   };
 
-  shuffle = () => {
-    for (var i = 0; i < friends.length; i++) {
-      const j = Math.floor(Math.random() * i + 1);
-      const curFriend = friends[i];
-      friends[i] = friends[j];
-      friends[j] = curFriend;
-    }
-  };
+  // shuffle = () => {
+  //   for (var i = 0; i < friends.length; i++) {
+  //     const j = Math.floor(Math.random() * i + 1);
+  //     const curFriend = friends[i];
+  //     friends[i] = friends[j];
+  //     friends[j] = curFriend;
+  //   }
+  // };
 
   newFriend = id => {
     // new array for friends.json
-    const friends = this.state.friends;
+    const newfriends = this.state.friends;
     // filter out friend that is clicked
-    let matched = friends.filter(friend => friend.id == id)
-    // let rand = friends(Math.floor(Math.random*i+1));
 
+    let matched = newfriends.filter(newfriend => newfriend.id === id)
+    matched[0].clicked = this.state.clicked;
     // if there is a match
-    if (matched[0].clicked) {
-      // matched[i].clicked = false;
+    if (matched[0].clicked ) {
+      console.log(matched[0], 'match 0')
       this.setState({ msg: "already clicked. sorry" });
+      // below is to reset back to false
       // for (let i = 0; i <friends.length; i++){
       //   friends[i].clicked = false;
       // }
-
       this.setState({ friends });
       this.setState({ correctScore });
     } else {
       // if no match
-      matched[0].clicked = false;
+      // matched[0].clicked = 0;
       console.log("pic clicked", matched[0].clicked, "id of pic clicked");
-
       // for (let i = 0; i <friends.length; i++){
       //   friends[i].clicked = false;
       // };
-      friends.sort((a, b) => {
+      newfriends.sort((a, b) => {
         return 0.5 - Math.random();
       });
       this.setState({
