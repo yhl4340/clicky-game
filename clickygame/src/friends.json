@@ -2,22 +2,57 @@
     {
         "id": 1,
         "name": "max",
-        "clicked": 0,
+        "clicked": false,
         "image": "http://disneyexaminer.com/wp-content/uploads/2015/09/disney-sidekicks-tangled-maximus.gif",
         "msg":""
     },
     {
         "id": 2,
         "name": "mikey",
-        "clicked": 0,
+        "clicked": false,
         "image": "http://24.media.tumblr.com/acc3bd9f4ea4cf109c691a0ce07f7730/tumblr_mm5xrdw7vY1rlmpm0o1_500.gif",
         "msg":""
     },
     {
         "id": 3,
         "name": "pua",
-        "clicked": 0,
+        "clicked": false,
         "image": "https://www.gifvideo.net/files/photos/2017/11/little-pig-friend-who8217s-already-stolen-my-heart-in-disney8217s-moana.gif",
+        "msg": ""
+    },
+    {
+        "id": 4,
+        "name": "minion",
+        "clicked": false,
+        "image": "https://media1.giphy.com/media/QbkL9WuorOlgI/giphy.gif?cid=790b76115cca75282e5837784954bde0&rid=giphy.gif",
+        "msg": ""
+    },
+    {
+        "id": 5,
+        "name": "zootopia",
+        "clicked": false,
+        "image": "https://media1.giphy.com/media/16bJmyPvRbCDu/giphy.gif?cid=790b76115cca754b35332e4e73ee04dc&rid=giphy.gif",
+        "msg": ""
+    },
+    {
+        "id": 6,
+        "name": "baymax",
+        "clicked": false,
+        "image": "https://media3.giphy.com/media/HOdcpVdGGKjRK/giphy.gif?cid=790b76115cca741d4e7a6d3077f4d88a&rid=giphy.gif",
+        "msg": ""
+    },
+    {
+        "id": 7,
+        "name": "olaf",
+        "clicked": false,
+        "image": "https://media2.giphy.com/media/12LHSf56POPTgs/giphy.gif?cid=790b76115cca74b1556339686396d5f5&rid=giphy.gif",
+        "msg": ""
+    },
+    {
+        "id": 9,
+        "name": "up",
+        "clicked": false,
+        "image": "https://media1.giphy.com/media/zMmcyhHu5Fol2/giphy.gif?cid=790b76115cca735357575765519b6f53&rid=giphy.gif",
         "msg": ""
     }
 ]
