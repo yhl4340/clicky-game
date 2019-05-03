@@ -14,31 +14,44 @@ class App extends Component {
     correctScore: 0,
     msg: ""
   };
-
+// shuffle the imported friends 
+// shuffle = friends => {
+//   let shuffledFriends = friends.sort(function(a,b){return 0.5 - Math.random()});
+//   return shuffledFriends;
+// }
+// reset all clicked props to false
+// reset = friends => {
+//   let resetFriends = friends.map(friend => ({...friend, clicked: false}));
+//   return this.shuffle(resetFriends)
+// }
+// check if a card has been clicked before. then update clicked property
   newFriend = id => {
+
     // new array for friends.json
-    const newfriends = this.state.friends;
+    let newfriends = this.state.friends;
+    // map through the new array that will have the updated clicked prop
+    
     // filter for match
-    
-    let matched = newfriends.filter(newfriend => newfriend.id === id) 
-
-    console.log(matched,'match000')
-    
-    // if there is a match
-    if (matched[0].clicked) {
-      console.log(matched[0], 'match 0')
-      this.matched.clicked = true;
-      
-      // below is to reset back to false
-      for (let i = 0; i <friends.length; i++){
-        friends[i].clicked = false;
+    let matched = newfriends.filter(newfriend => newfriend.id === id)
   
+    
 
-      }
+    // if there is a match
+    if (matched.clicked) {
+      console.log(matched,'match000')
+      this.setState({clicked:true})
+      console.log(matched[0], 'match 0')
+     
+      // below is to reset back to false      
+      // for (let i = 0; i <friends.length; i++){
+      //   friends[i].clicked = false;
+  
+      // }
       this.setState({ friends });
       this.setState({ correctScore });
       this.setState({ msg: "already clicked. sorry" });
     } else {
+      
       // if no match
      
       console.log("pic clicked", matched[0].clicked, "id of pic clicked");
@@ -56,7 +69,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar 
+        score ={this.correctScore}/>
         <Jumbotron />
         <h3>{this.state.msg}</h3>
         <h4>{this.state.correctScore}</h4>
