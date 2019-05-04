@@ -9,53 +9,32 @@ let msg = '';
 let correctScore = 0;
 class App extends Component {
   state = {
-    clicked: false,
+    clicked: true,
     friends,
     correctScore: 0,
     msg: ""
   };
-// shuffle the imported friends 
-// shuffle = friends => {
-//   let shuffledFriends = friends.sort(function(a,b){return 0.5 - Math.random()});
-//   return shuffledFriends;
-// }
-// reset all clicked props to false
-// reset = friends => {
-//   let resetFriends = friends.map(friend => ({...friend, clicked: false}));
-//   return this.shuffle(resetFriends)
-// }
-// check if a card has been clicked before. then update clicked property
+
   newFriend = id => {
 
     // new array for friends.json
-    let newfriends = this.state.friends;
-    // map through the new array that will have the updated clicked prop
-    
-    // filter for match
-    let matched = newfriends.filter(newfriend => newfriend.id === id)
-  
-    
+    let newfriends = this.state.friends; 
+    // filter for match. returns array with matching obj
+    let matched = newfriends.filter(newfriend => newfriend.id === id)[0];
+    console.log('matched;', matched)
 
     // if there is a match
     if (matched.clicked) {
-      console.log(matched,'match000')
-      this.setState({clicked:true})
-      console.log(matched[0], 'match 0')
-     
-      // below is to reset back to false      
-      // for (let i = 0; i <friends.length; i++){
-      //   friends[i].clicked = false;
-  
-      // }
-      this.setState({ friends });
+      
+      this.setState({ clicked: true });
       this.setState({ correctScore });
       this.setState({ msg: "already clicked. sorry" });
+      console.log(matched, "match000");
     } else {
-      
       // if no match
-     
-      console.log("pic clicked", matched[0].clicked, "id of pic clicked");
-      
+      matched.clicked = true;
+      console.log("pic clicked", matched.clicked, "id of pic clicked");
+
       newfriends.sort((a, b) => {
         return 0.5 - Math.random();
       });
