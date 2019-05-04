@@ -9,14 +9,14 @@ import friends from './friends.json';
 let correctScore = 0;
 class App extends Component {
   state = {
-    clicked: true,
     friends,
     correctScore: 0,
-    msg: ""
+  
   };
 
   newFriend = id => {
-
+    console.log(this.state);
+    
     // new array for friends.json
     let newfriends = this.state.friends; 
     // filter for match. returns array with matching obj
@@ -25,7 +25,7 @@ class App extends Component {
 
     // if there is a match
     if (matched.clicked) {
-      this.setState({ clicked: true });
+      
       // this.setState({ correctScore });
       this.setState({ msg: "Already clicked. Try again" });
       console.log(matched, "match000");
@@ -56,7 +56,6 @@ class App extends Component {
         correctScore ={this.state.correctScore}/>
         <Jumbotron />
         <h3>{this.state.msg}</h3>
-        <h4>{this.state.correctScore}</h4>
         {this.state.friends.map(friend => (
           <Cards
             id={friend.id}

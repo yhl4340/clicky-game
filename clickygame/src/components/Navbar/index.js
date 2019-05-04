@@ -3,7 +3,7 @@ import './style.css'
 
 function Navbar(props) {
     return (
-      <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+      <nav className='navbar navbar-expand-lg navbar-dark'>
       <p className='name'>Clicky Game</p>
     
       <p className='score'>Score:{props.correctScore}</p>

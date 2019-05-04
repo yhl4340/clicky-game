@@ -4,7 +4,7 @@ import './style.css'
 
 function Jumbotron ({children}) {
     return (
-        <div className='jumbotron'>Click click
+        <div className='jumbotron'>Click Click
         <h2>Click on any images! But no repeats!</h2>
         </div>
     )
