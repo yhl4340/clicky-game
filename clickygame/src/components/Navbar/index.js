@@ -4,11 +4,9 @@ import './style.css'
 function Navbar(props) {
     return (
       <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
-      <p className='navbar'>
-        Clicky Game
-        </p>
+      <p className='name'>Clicky Game</p>
     
-      <p className='score'>score: {props.correctScore}</p>
+      <p className='score'>Score:{props.correctScore}</p>
     </nav>
     );
   }

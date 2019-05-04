@@ -5,7 +5,7 @@ import Jumbotron from './components/Jumbotron';
 import Navbar from './components/Navbar';
 import Cards from './components/Cards';
 import friends from './friends.json';
-let msg = '';
+
 let correctScore = 0;
 class App extends Component {
   state = {
@@ -25,11 +25,15 @@ class App extends Component {
 
     // if there is a match
     if (matched.clicked) {
-      
       this.setState({ clicked: true });
-      this.setState({ correctScore });
-      this.setState({ msg: "already clicked. sorry" });
+      // this.setState({ correctScore });
+      this.setState({ msg: "Already clicked. Try again" });
       console.log(matched, "match000");
+
+      newfriends.sort((a, b) => {
+        return 0.5 - Math.random();
+      });
+      this.setState({correctScore:0})
     } else {
       // if no match
       matched.clicked = true;
@@ -49,7 +53,7 @@ class App extends Component {
     return (
       <div>
         <Navbar 
-        score ={this.correctScore}/>
+        correctScore ={this.state.correctScore}/>
         <Jumbotron />
         <h3>{this.state.msg}</h3>
         <h4>{this.state.correctScore}</h4>
