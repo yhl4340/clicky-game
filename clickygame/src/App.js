@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Cards from './components/Cards';
 import friends from './friends.json';
 
-let correctScore = 0;
+
 class App extends Component {
   state = {
     friends,
